@@ -1,0 +1,244 @@
+<nav style="position: fixed;z-index: 1050;width: 100%" class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+  <button class="navbar-toggler" style="font-size: 1rem;" type="button"
+    (click)="naoMostraNavBarMobile = !naoMostraNavBarMobile" data-toggle="collapse" #navbarSupportedContent
+    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+    aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <a *ngIf="this.singleton.mobile"
+    style="font-size: smaller;" class="navbar-brand"
+    [routerLink]="['/']">
+    My Ecommerce
+  </a>
+  <a *ngIf="!this.singleton.mobile" class="navbar-brand" [routerLink]="['/']"> My Ecommerce</a>
+  <a class="nav-link" *ngIf="this.singleton.mobile" style="color: white;padding-left: 0px;" (click)="fechaMenuMobile()"
+    [routerLink]="['/carrinho']" routerLinkActive="active"><i class="fas fa-shopping-cart"></i>
+    <a *ngIf="!this.singleton.mobile "> Carrinho</a>
+  </a>
+
+  <div class="btn-group" *ngIf="!this.singleton.mobile">
+    <button id="button-basic" type="button" class="btn btn-primary dropdown-toggle" style="background-color: #012e40;border-color: #012e40;"
+            aria-controls="dropdown-basic" on-mouseenter="mostrarCategorias()">
+      <span class="caret">Categorias</span>
+    </button>
+  </div>
+
+  <div class="input-group" style="max-width: 96%;margin-right: 10px;margin-top: 5px;">
+    <input type="search" class="form-control" placeholder="Pesquise por produto, marca, categorias..."
+    oninput="this.value = this.value.toUpperCase()" #textoPesquisa>
+    <div class="input-group-append">
+        <button class="btn btn-light"
+        style="width: 100%;"
+        ><i class="fas fa-search"></i></button>
+    </div>
+  </div>
+
+  <div [class.collapse]="naoMostraNavBarMobile" class="navbar-collapse" id="navbarSupportedContent">
+    <hr *ngIf="this.singleton.mobile" style="margin: 0;margin-top: 10px; border: 1px solid white;"/>
+    <ul class="navbar-nav mr-auto" (click)="naoMostraNavBarMobile = !naoMostraNavBarMobile">
+      <li class="nav-item active" *ngIf="!this.singleton.mobile">
+        <a class="nav-link" [routerLink]="['/carrinho']" routerLinkActive="active"><i class="fas fa-shopping-cart"></i>
+        </a>
+      </li>
+      <li class="nav-item active" *ngIf="!this.singleton.mobile && !logado">
+        <a class="nav-link" [routerLink]="['/login']" routerLinkActive="active"><i class="fas fa-user"></i>
+        </a>
+      </li>
+      <div class="btn-group" dropdown *ngIf="!this.singleton.mobile && logado">
+        <button id="button-basic" dropdownToggle type="button" class="btn btn-primary dropdown-toggle" style="background-color: #012e40;border-color: #012e40;"
+                aria-controls="dropdown-basic">
+          <span class="caret"><i class="fas fa-user"></i></span>
+        </button>
+        <ul id="dropdown-basic" *dropdownMenu  class="dropdown-esquerda dropdown-menu"
+            role="menu" aria-labelledby="button-basic">
+          <li role="menuitem"><a class="dropdown-item" [routerLink]="['/cadastro']"><i class="fas fa-user-edit"></i> Meus Dados</a></li>
+          <li role="menuitem"><a class="dropdown-item" [routerLink]="['/pedidos']"><i class="fas fa-clipboard-list"></i> Meus Pedidos</a></li>
+          <li class="divider dropdown-divider"></li>
+          <li role="menuitem"><a class="dropdown-item" [routerLink]="['/login']" (click)="sair()">
+              <i class="fas fa-times-circle"></i> Sair</a>
+          </li>
+        </ul>
+      </div>
+      <li class="nav-item active" *ngIf="this.singleton.mobile">
+        <a class="nav-link active" [routerLink]="['/catalogo']" routerLinkActive="active"><i class="fas fa-home"></i>
+          Home
+        </a>
+      </li>
+      <li class="nav-item active" *ngIf="!logado && this.singleton.mobile">
+        <a class="nav-link active" [routerLink]="['/login']" routerLinkActive="active"><i class="fas fa-user"></i>
+          Login
+        </a>
+      </li>
+      <li class="nav-item active" *ngIf="logado && this.singleton.mobile">
+        <a class="nav-link active" [routerLink]="['/cadastro']" routerLinkActive="active"><i class="fas fa-user"></i> Meus
+          Dados</a>
+      </li>
+      <li class="nav-item active" *ngIf="logado && this.singleton.mobile">
+        <a class="nav-link active" [routerLink]="['/pedidos']" routerLinkActive="active"><i class="fas fa-clipboard-list"></i>
+          Meus Pedidos</a>
+      </li>
+      <li class="nav-item active " *ngIf="logado && this.singleton.mobile">
+        <a class="nav-link active" [routerLink]="['/login']" routerLinkActive="active" (click)="sair()"><i
+            class="fas fa-sign-out-alt"></i> Sair</a>
+      </li>
+      <hr style="margin: 0;margin-top: 10px; border: 1px solid white;"/>
+      <h5 *ngIf="this.singleton.mobile" style="text-align: center;color: white;">Categorias</h5>
+      <div *ngIf="this.singleton.mobile">
+        <li class="nav-item">
+          <a class="nav-link active" routerLinkActive="active" [routerLink]="['/catalogo']"><i
+              class="fas fa-sign-out-alt"></i> Todas</a>
+        </li>
+      </div>
+      <div *ngIf="this.singleton.mobile" style="height: 100vh;">
+        <li class="nav-item active">
+          <a class="nav-link active" routerLinkActive="active" [routerLink]="['/catalogo']">
+            <i class="fas fa-sign-out-alt"></i> Categoria
+          </a>
+        </li>
+      </div>
+      <div *ngIf="this.singleton.mobile" style="height: 100vh;">
+        <li class="nav-item active">
+          <a class="nav-link active" routerLinkActive="active" [routerLink]="['/catalogo']">
+            <i class="fas fa-sign-out-alt"></i> Categoria
+          </a>
+        </li>
+      </div>
+      <div *ngIf="this.singleton.mobile" style="height: 100vh;">
+        <li class="nav-item active">
+          <a class="nav-link active" routerLinkActive="active" [routerLink]="['/catalogo']">
+            <i class="fas fa-sign-out-alt"></i> Categoria
+          </a>
+        </li>
+      </div>
+      <div *ngIf="this.singleton.mobile" style="height: 100vh;">
+        <li class="nav-item active">
+          <a class="nav-link active" routerLinkActive="active" [routerLink]="['/catalogo']">
+            <i class="fas fa-sign-out-alt"></i> Categoria
+          </a>
+        </li>
+      </div>
+      <div *ngIf="this.singleton.mobile" style="height: 100vh;">
+        <li class="nav-item active">
+          <a class="nav-link active" routerLinkActive="active" [routerLink]="['/catalogo']">
+            <i class="fas fa-sign-out-alt"></i> Categoria
+          </a>
+        </li>
+      </div>
+      <div *ngIf="this.singleton.mobile" style="height: 100vh;">
+        <li class="nav-item active">
+          <a class="nav-link active" routerLinkActive="active" [routerLink]="['/catalogo']">
+            <i class="fas fa-sign-out-alt"></i> Categoria
+          </a>
+        </li>
+      </div>
+      <div *ngIf="this.singleton.mobile" style="height: 100vh;">
+        <li class="nav-item active">
+          <a class="nav-link active" routerLinkActive="active" [routerLink]="['/catalogo']">
+            <i class="fas fa-sign-out-alt"></i> Categoria
+          </a>
+        </li>
+      </div>
+    </ul>
+  </div>
+</nav>
+
+<nav style="position: fixed;z-index: 1050;width: 100%;margin-top: 60px;"
+class="navbar navbar-expand-lg navbar-dark bg-dark" on-mouseleave="mostrarCategorias()"
+*ngIf="!this.singleton.mobile&&this.mostraCategorias" >
+  <div class="col-md-12" style="padding: 0px;text-align: center;">
+    <button class="btn btn-dark" style="border: 1px solid white;margin-right: 5px;;margin-bottom: 5px"
+    [routerLink]="['/catalogo']">
+      <i class="fas fa-tag"></i> TODAS
+    </button>
+    <button class="btn btn-dark" style="border: 1px solid white;margin-right: 5px;margin-bottom: 5px;"
+    [routerLink]="['/catalogo']" >
+      <i class="fas fa-tag"></i> Categoria
+    </button>
+    <button class="btn btn-dark" style="border: 1px solid white;margin-right: 5px;margin-bottom: 5px;"
+    [routerLink]="['/catalogo']" >
+      <i class="fas fa-tag"></i> Categoria
+    </button>
+    <button class="btn btn-dark" style="border: 1px solid white;margin-right: 5px;margin-bottom: 5px;"
+    [routerLink]="['/catalogo']" >
+      <i class="fas fa-tag"></i> Categoria
+    </button>
+    <button class="btn btn-dark" style="border: 1px solid white;margin-right: 5px;margin-bottom: 5px;"
+    [routerLink]="['/catalogo']" >
+      <i class="fas fa-tag"></i> Categoria
+    </button>
+    <button class="btn btn-dark" style="border: 1px solid white;margin-right: 5px;margin-bottom: 5px;"
+    [routerLink]="['/catalogo']" >
+      <i class="fas fa-tag"></i> Categoria
+    </button>
+    <button class="btn btn-dark" style="border: 1px solid white;margin-right: 5px;margin-bottom: 5px;"
+    [routerLink]="['/catalogo']" >
+      <i class="fas fa-tag"></i> Categoria
+    </button>
+    <button class="btn btn-dark" style="border: 1px solid white;margin-right: 5px;margin-bottom: 5px;"
+    [routerLink]="['/catalogo']" >
+      <i class="fas fa-tag"></i> Categoria
+    </button>
+  </div>
+</nav>
+
+<br>
+<router-outlet *ngIf="!this.carregando"></router-outlet>
+<a href="https://api.whatsapp.com/send?phone=55629789478787" class="float" target="_blank">
+  <i class="fa fa-whatsapp my-float"></i>
+</a>
+<footer *ngIf="!this.carregando" class="pt-4 my-md-5 pt-md-5 border-top"
+  style="background-color: #012e40!important;margin: 0px !important;">
+  <div class="row" style="margin: 0px;">
+    <div class="col-6 col-md" style="text-align: center;">
+      <h5 style="color: white  !important;">Endereço</h5>
+
+      <ul class="list-unstyled text-small">
+        <li>
+          <a style="color: white  !important;">AVENIDA ENDEREÇO</a></li>
+        <li>
+          <a style="color: white  !important;">Nº 191951</a></li>
+        <li>
+          <a style="color: white  !important;">BAIRRO</a></li>
+        <li>
+          <a style="color: white  !important;">CEP</a></li>
+        <li>
+          <a style="color: white  !important;">CIDADE - UF</a></li>
+        <li>
+          <a style="color: white  !important;">TELEFONE</a></li>
+        <li>
+          <a style="color: white  !important;">EMAIL</a></li>
+      </ul>
+    </div>
+    <div class="col-6 col-md" style="text-align: center;">
+      <h5 style="color: white  !important;">Redes Sociais</h5>
+      <ul class="list-unstyled text-small">
+        <li><a class="text-muted" style="color: white  !important;" href="#"><i class="fab fa-facebook-square"></i>
+            Facebook</a></li>
+        <li><a class="text-muted" style="color: white  !important;" href="#"><i class="fab fa-instagram-square"></i>
+            Instagram</a></li>
+        <li><a class="text-muted" style="color: white  !important;" href="#"><i class="fab fa-twitter-square"></i>
+            Twitter</a>
+        </li>
+        <li><a class="text-muted" style="color: white  !important;" target="_blank" rel="noopener noreferrer"
+            href="https://api.whatsapp.com/send?phone=55"><i
+              class="fab fa-whatsapp-square"></i>
+            Whatsapp</a></li>
+      </ul>
+    </div>
+    <div class="col-6 col-md">
+      <h5 style="color: white  !important;">Pagamentos</h5>
+      <ul class="list-unstyled text-small">
+        <img src="../assets/icons/bandeiras.png" style="max-width: 50%;max-height: 50%;">
+      </ul>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 col-md" style="text-align: center;">
+      <small class="d-block mb-3 text-muted"><a style="color: white  !important;cursor: pointer;" target="_blank"
+          rel="noopener noreferrer" href="https://github.com/lucasviniciosfs">Desenvolvido por Lucas © 2020</a>
+      </small>
+    </div>
+  </div>
+</footer>
