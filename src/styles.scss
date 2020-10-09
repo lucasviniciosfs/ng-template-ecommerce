@@ -1,0 +1,56 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+.container {
+  margin-top: 50px;
+  min-height: 100vh;
+}
+@media (max-width: 600px) {
+  .container {
+    margin-top: 80px;
+  }
+}
+
+.bg-dark {
+    background-color: #012e40!important;
+}
+
+.btn-dark {
+    color: #fff;
+    background-color: #012e40;
+    border-color: #012e40;
+}
+
+.carousel-indicators {
+  margin-bottom: -40px;
+}
+
+.carousel-indicators li {
+  background-color: darkblue;
+}
+
+.carousel-inner {
+  overflow: visible;
+}
+
+.carousel-control-prev {
+  margin-left: -90px;
+}
+.carousel-control-next{
+  margin-right: -90px;
+}
+@media (max-width: 600px) {
+  .carousel-control-prev {
+    margin-left: -30px;
+  }
+  .carousel-control-next{
+    margin-right: -30px;
+  }
+}
+
+.carousel-control-next-icon {
+  background-color:  darkblue;
+}
+.carousel-control-prev-icon {
+  background-color:  darkblue;
+}
