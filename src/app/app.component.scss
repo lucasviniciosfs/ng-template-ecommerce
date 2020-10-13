@@ -23,3 +23,9 @@
 }
 
 li.one{display:none}/*hide first li*/
+
+@media (max-width: 600px) {
+	.navbar {
+	  margin-top: -100px;
+	}
+}
