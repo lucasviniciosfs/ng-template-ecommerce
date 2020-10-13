@@ -1,16 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~bootstrap/dist/css/bootstrap.min.css';
 
-.container {
-  margin-top: 50px;
-  min-height: 100vh;
-}
-@media (max-width: 600px) {
-  .container {
-    margin-top: 80px;
-  }
-}
-
 .bg-dark {
     background-color: #012e40!important;
 }
@@ -22,11 +12,11 @@
 }
 
 .carousel-indicators {
-  margin-bottom: -40px;
+  margin-bottom: -20px;
 }
 
 .carousel-indicators li {
-  background-color: darkblue;
+  background-color: dodgerblue;
 }
 
 .carousel-inner {
@@ -34,10 +24,10 @@
 }
 
 .carousel-control-prev {
-  margin-left: -90px;
+  margin-left: -100px;
 }
 .carousel-control-next{
-  margin-right: -90px;
+  margin-right: -100px;
 }
 @media (max-width: 600px) {
   .carousel-control-prev {
@@ -49,8 +39,8 @@
 }
 
 .carousel-control-next-icon {
-  background-color:  darkblue;
+  background-color:  dodgerblue;
 }
 .carousel-control-prev-icon {
-  background-color:  darkblue;
+  background-color:  dodgerblue;
 }

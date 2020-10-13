@@ -6,7 +6,7 @@
   <!-- MOBILE -->
     <!-- BANNER -->
     <div style="height: 16vh;" *ngIf="this.singleton.mobile" >
-      <carousel [noPause]="false" [isAnimated]="true"  [indicatorsByChunk]="false" *ngIf="!this.carregando" style="max-height: 20vh;">
+      <carousel [noPause]="false" [isAnimated]="true"  [indicatorsByChunk]="true" [showIndicators]="false" *ngIf="!this.carregando" style="max-height: 20vh;">
         <slide style="max-height: 15vh;">
             <img src="assets/images/banner/1.jpg" style="width: 100%;height: auto;max-height: 15vh;"
                 alt="First slide">
@@ -259,7 +259,7 @@
   <!-- WEB -->
     <!-- BANNER -->
     <div style="height: 30vh;margin-bottom: 30px;" *ngIf="!this.singleton.mobile" >
-      <carousel [noPause]="false" [isAnimated]="true"  [indicatorsByChunk]="false" *ngIf="!this.carregando" style="max-height: 30vh;">
+      <carousel [noPause]="true" [isAnimated]="true" [indicatorsByChunk]="true" *ngIf="!this.carregando" style="max-height: 30vh;">
         <slide  style="max-height: 30vh;">
             <img  src="assets/images/banner/1.jpg" style="width: 100%;height: auto;max-height: 30vh;">
         </slide>
@@ -284,7 +284,7 @@
     <!-- PROMOÇÃO -->
     <div style="height: 350px;margin-bottom: 30px;" *ngIf="!this.singleton.mobile" >
       <h6 style="width: 100%;text-align: center;">PROMOÇÃO</h6>
-      <carousel [noPause]="false" [isAnimated]="true" [indicatorsByChunk]="false" *ngIf="!this.carregando" style="max-height: 325px;">
+      <carousel [noPause]="false" [isAnimated]="true" [showIndicators]="false" *ngIf="!this.carregando" style="max-height: 325px;">
         <slide
           style="max-height: 325px;">
             <div class="col-sm-12 col-md-12">
@@ -450,7 +450,7 @@
     <!-- DESTAQUES -->
     <div style="height: 350px;margin-bottom: 30px;" *ngIf="!this.singleton.mobile" >
       <h6 style="width: 100%;text-align: center;">DESTAQUES</h6>
-      <carousel [noPause]="false" [isAnimated]="true" [indicatorsByChunk]="false" *ngIf="!this.carregando" style="max-height: 325px;">
+      <carousel [noPause]="false" [isAnimated]="true" [showIndicators]="false" *ngIf="!this.carregando" style="max-height: 325px;">
         <slide
           style="max-height: 325px;">
             <div class="col-sm-12 col-md-12">
@@ -616,7 +616,7 @@
     <!-- DEMAIS PRODUTOS -->
     <div style="height: 350px;margin-bottom: 30px;" *ngIf="!this.singleton.mobile" >
       <h6 style="width: 100%;text-align: center;">ALGUNS PRODUTOS</h6>
-      <carousel [noPause]="false" [isAnimated]="true" [indicatorsByChunk]="false" *ngIf="!this.carregando" style="max-height: 325px;">
+      <carousel [noPause]="false" [isAnimated]="true" [showIndicators]="false" *ngIf="!this.carregando" style="max-height: 325px;">
         <slide
           style="max-height: 325px;">
             <div class="col-sm-12 col-md-12">
