@@ -29,10 +29,10 @@ const routes: Routes = [
   //   path: 'catalogo',
   //   loadChildren: () => import('./catalogo/catalogo.module').then(m => m.CatalogoModule)
   // },
-  // {
-  //   path: 'produto-detalhe',
-  //   loadChildren: () => import('./produto-detalhe/produto-detalhe.module').then(m => m.ProdutoDetalheModule)
-  // },
+  {
+    path: 'produto-detalhe',
+    loadChildren: () => import('./produto-detalhe/produto-detalhe.module').then(m => m.ProdutoDetalheModule)
+  },
   {
     path: 'home',
     loadChildren: () => import('./home/home.module').then(m => m.HomeModule)
