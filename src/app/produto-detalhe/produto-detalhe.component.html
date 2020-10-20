@@ -1,0 +1,144 @@
+<div class="container">
+    <!-- Componente de loading -->
+    <app-carregando *ngIf="carregando"></app-carregando>
+    <nav aria-label="breadcrumb" *ngIf="!carregando">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a [routerLink]="['/home']">Home</a></li>
+        <li class="breadcrumb-item"><a [routerLink]="['/catalogo']">Catálogo</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Detalhes do produto</li>
+      </ol>
+    </nav>
+
+    <!-- Layout do produto -->
+    <div class="row" *ngIf="!carregando">
+        <!-- Coluna das fotos -->
+        <div class="col-md-7">
+            <div class="row" style="justify-content: center;" *ngIf="!this.singleton.mobile">
+                <img *ngFor="let foto of fotos;let index = index"  src="assets/images/produto/SemImagem.jpg"
+                style="width: auto;height: auto;max-width: 50px;max-height: 50px;cursor: pointer;margin-right: 20px;">
+            </div>
+            <br *ngIf="!this.singleton.mobile"/>
+            <div *ngIf="!this.singleton.mobile" style="justify-content: center;height: 70vh;" class="row">
+                    <img  src="assets/images/produto/SemImagem.jpg" style="width: auto;max-width: 100%;height: fit-content;max-height: 70vh;">
+            </div>
+            <div *ngIf="this.singleton.mobile" style="justify-content: center;height: 50vh;text-align-last: center;display: flex;width: 100%;">
+                <img  src="assets/images/produto/SemImagem.jpg" style="width: auto;max-width: 100%;max-height: 50vh;">
+            </div>
+            <br *ngIf="this.singleton.mobile"/>
+            <div class="row" style="justify-content: center;" *ngIf="this.singleton.mobile">
+                <img *ngFor="let foto of fotos;let index = index"  src="assets/images/produto/SemImagem.jpg"
+                style="width: 50px;height: 50px;cursor: pointer;margin-right: 20px;">
+            </div>
+        </div>
+        <br/>
+
+        <!-- Coluna das Informacoes -->
+        <div class="col-md-5">
+            <div class="caption">
+                <h5 class="nomeProduto">Nome Produto</h5>
+                <h1 style="color: darkgreen;">R$ 100,00 à vista/boleto</h1>
+                <h5 style="color: black;">No cartão em 1x: R$ 100,00</h5>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <label>Selecione a cor:</label>
+                        <select class="custom-select" #cor style="color: black;">
+                            <option value="0" >Selecione...</option>
+                            <option value="0" >Verde</option>
+                            <option value="0" >Azul</option>
+                            <option value="0" >Branco</option>
+                            <option value="0" >Preto</option>
+                        </select>
+                    </div>
+                </div>
+
+                <br/>
+                <div class="row">
+                    <div class="col-md-12">
+                        <label>Selecione o tamanho:</label>
+                        <select class="custom-select" style="color: black;" #tamanho >
+                            <option value="0" >Selecione...</option>
+                            <option value="0" >P</option>
+                            <option value="0" >M</option>
+                            <option value="0" >G</option>
+                        </select>
+                    </div>
+                </div>
+
+                <br/>
+                <div class="row">
+                    <div class="col-md-12">
+                        <label style="margin-right: 5px;">Quantidade:</label>
+                        <input name="est_qtde" type="number" value="1" min="1" step="1"/>
+                    </div>
+                </div>
+            </div>
+            <hr>
+
+            <div class="row">
+                <div class="col-md-12" style="text-align: center;">
+                    <button type="button" class="btn btn-dark"
+                        style="width: 100%;"><i class="fas fa-shopping-basket"></i>Comprar</button>
+                    <h6 style="color: red;">PRODUTO ESGOTADO</h6>
+                </div>
+            </div>
+            <hr>
+
+            <div class="row">
+              <div class="col-md-12" style="text-align: center;">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="card-title">Parcelamento</h5>
+                    <select class="custom-select" style="color: black;">
+                      <option selected value="visa">Visa</option>
+                      <option value="mastercard">Mastercard</option>
+                      <option value="diners">Diners</option>
+                      <option value="amex">Amex</option>
+                      <option value="elo">Elo</option>
+                      <option value="hipercard">Hipercard</option>
+                    </select>
+                    <hr/>
+                    <div>
+                      <p class="card-text" style="margin-bottom: 5px;font-size: small;">
+                        <strong>Parcela:</strong> 1X
+                        <strong>Juros:</strong> 5 a.m.
+                        <strong>Valor Parcela:</strong> R$ 100,00
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+        </div>
+
+    </div>
+    <br/>
+
+    <!-- Informacoes do produto -->
+    <div class="row" *ngIf="!carregando">
+        <div class="jumbotron" style="width: 100%;padding: 16px 16px;">
+            <div>
+                <tabset>
+                  <tab heading="Informações do Produto:" id="tab1">
+                    <pre style="white-space: pre-wrap;">
+Marca: USE
+
+Catálogo:
+
+Cód: 498287
+
+Avental de tecido com bolso e alça ajustável.
+
+Tecido Oxford xadrez azul
+Detalhe Oxford azul marinho / azul royal
+
+Tam. (H)85 x (L)70cm
+                    </pre>
+                  </tab>
+                </tabset>
+            </div>
+        </div>
+    </div>
+</div>
+<br/>
