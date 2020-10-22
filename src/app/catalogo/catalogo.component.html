@@ -1,0 +1,218 @@
+<div class="container">
+    <!-- Componente de loading -->
+    <app-carregando *ngIf="carregando"></app-carregando>
+
+    <nav aria-label="breadcrumb" *ngIf="!carregando">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a [routerLink]="['/home']">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Catálogo</li>
+      </ol>
+    </nav>
+
+    <!-- Catalogo-->
+    <div class="row" style="margin: 0px;" *ngIf="!carregando">
+        <!-- PRODUTOS -->
+        <div class="col-sm-12 col-md-12" style="padding: 0%;">
+            <div class="row" style="margin: 0px;">
+                <div class="card col-sm-4 col-md-3" style="margin-bottom: 15px;" [routerLink]="['/produto-detalhe']">
+                    <div style="height: 210px;align-self: center;">
+                        <img src="assets/images/produto/SemImagem.jpg"
+                            class="card-img-top" alt="..." style="width: auto; max-width: 100%; height: auto;max-height: 210px; cursor: pointer;">
+                    </div>
+                    <div class="card-body" style="padding: 0px;text-align: center">
+                        <a class="card-title" style="text-align: center;cursor: pointer;"
+                        [routerLink]="['/produto-detalhe']">Nome Produto</a>
+                        <p class="card-text" style="text-align: center;color: forestgreen;margin-bottom: 0px;">
+                            R$ 100,00 à vista/boleto</p>
+                        <p class="card-text" style="text-align: center;font-weight: bold;margin-bottom: 0px;">
+                            R$ 100,00 em 1x no cartão</p>
+                        <h6 style="color: white;background-color: red;">PRODUTO ESGOTADO</h6>
+                    </div>
+                </div>
+                <div class="card col-sm-4 col-md-3" style="margin-bottom: 15px;" [routerLink]="['/produto-detalhe']">
+                    <div style="height: 210px;align-self: center;">
+                        <img src="assets/images/produto/SemImagem.jpg"
+                            class="card-img-top" alt="..." style="width: auto; max-width: 100%; height: auto;max-height: 210px; cursor: pointer;">
+                    </div>
+                    <div class="card-body" style="padding: 0px;text-align: center">
+                        <a class="card-title" style="text-align: center;cursor: pointer;"
+                        [routerLink]="['/produto-detalhe']">Nome Produto</a>
+                        <p class="card-text" style="text-align: center;color: forestgreen;margin-bottom: 0px;">
+                            R$ 100,00 à vista/boleto</p>
+                        <p class="card-text" style="text-align: center;font-weight: bold;margin-bottom: 0px;">
+                            R$ 100,00 em 1x no cartão</p>
+                        <h6 style="color: white;background-color: red;">PRODUTO ESGOTADO</h6>
+                    </div>
+                </div>
+                <div class="card col-sm-4 col-md-3" style="margin-bottom: 15px;" [routerLink]="['/produto-detalhe']">
+                    <div style="height: 210px;align-self: center;">
+                        <img src="assets/images/produto/SemImagem.jpg"
+                            class="card-img-top" alt="..." style="width: auto; max-width: 100%; height: auto;max-height: 210px; cursor: pointer;">
+                    </div>
+                    <div class="card-body" style="padding: 0px;text-align: center">
+                        <a class="card-title" style="text-align: center;cursor: pointer;"
+                        [routerLink]="['/produto-detalhe']">Nome Produto</a>
+                        <p class="card-text" style="text-align: center;color: forestgreen;margin-bottom: 0px;">
+                            R$ 100,00 à vista/boleto</p>
+                        <p class="card-text" style="text-align: center;font-weight: bold;margin-bottom: 0px;">
+                            R$ 100,00 em 1x no cartão</p>
+                        <h6 style="color: white;background-color: red;">PRODUTO ESGOTADO</h6>
+                    </div>
+                </div>
+                <div class="card col-sm-4 col-md-3" style="margin-bottom: 15px;" [routerLink]="['/produto-detalhe']">
+                    <div style="height: 210px;align-self: center;">
+                        <img src="assets/images/produto/SemImagem.jpg"
+                            class="card-img-top" alt="..." style="width: auto; max-width: 100%; height: auto;max-height: 210px; cursor: pointer;">
+                    </div>
+                    <div class="card-body" style="padding: 0px;text-align: center">
+                        <a class="card-title" style="text-align: center;cursor: pointer;"
+                        [routerLink]="['/produto-detalhe']">Nome Produto</a>
+                        <p class="card-text" style="text-align: center;color: forestgreen;margin-bottom: 0px;">
+                            R$ 100,00 à vista/boleto</p>
+                        <p class="card-text" style="text-align: center;font-weight: bold;margin-bottom: 0px;">
+                            R$ 100,00 em 1x no cartão</p>
+                        <h6 style="color: white;background-color: red;">PRODUTO ESGOTADO</h6>
+                    </div>
+                </div>
+                <div class="card col-sm-4 col-md-3" style="margin-bottom: 15px;" [routerLink]="['/produto-detalhe']">
+                    <div style="height: 210px;align-self: center;">
+                        <img src="assets/images/produto/SemImagem.jpg"
+                            class="card-img-top" alt="..." style="width: auto; max-width: 100%; height: auto;max-height: 210px; cursor: pointer;">
+                    </div>
+                    <div class="card-body" style="padding: 0px;text-align: center">
+                        <a class="card-title" style="text-align: center;cursor: pointer;"
+                        [routerLink]="['/produto-detalhe']">Nome Produto</a>
+                        <p class="card-text" style="text-align: center;color: forestgreen;margin-bottom: 0px;">
+                            R$ 100,00 à vista/boleto</p>
+                        <p class="card-text" style="text-align: center;font-weight: bold;margin-bottom: 0px;">
+                            R$ 100,00 em 1x no cartão</p>
+                        <h6 style="color: white;background-color: red;">PRODUTO ESGOTADO</h6>
+                    </div>
+                </div>
+                <div class="card col-sm-4 col-md-3" style="margin-bottom: 15px;" [routerLink]="['/produto-detalhe']">
+                    <div style="height: 210px;align-self: center;">
+                        <img src="assets/images/produto/SemImagem.jpg"
+                            class="card-img-top" alt="..." style="width: auto; max-width: 100%; height: auto;max-height: 210px; cursor: pointer;">
+                    </div>
+                    <div class="card-body" style="padding: 0px;text-align: center">
+                        <a class="card-title" style="text-align: center;cursor: pointer;"
+                        [routerLink]="['/produto-detalhe']">Nome Produto</a>
+                        <p class="card-text" style="text-align: center;color: forestgreen;margin-bottom: 0px;">
+                            R$ 100,00 à vista/boleto</p>
+                        <p class="card-text" style="text-align: center;font-weight: bold;margin-bottom: 0px;">
+                            R$ 100,00 em 1x no cartão</p>
+                        <h6 style="color: white;background-color: red;">PRODUTO ESGOTADO</h6>
+                    </div>
+                </div>
+                <div class="card col-sm-4 col-md-3" style="margin-bottom: 15px;" [routerLink]="['/produto-detalhe']">
+                    <div style="height: 210px;align-self: center;">
+                        <img src="assets/images/produto/SemImagem.jpg"
+                            class="card-img-top" alt="..." style="width: auto; max-width: 100%; height: auto;max-height: 210px; cursor: pointer;">
+                    </div>
+                    <div class="card-body" style="padding: 0px;text-align: center">
+                        <a class="card-title" style="text-align: center;cursor: pointer;"
+                        [routerLink]="['/produto-detalhe']">Nome Produto</a>
+                        <p class="card-text" style="text-align: center;color: forestgreen;margin-bottom: 0px;">
+                            R$ 100,00 à vista/boleto</p>
+                        <p class="card-text" style="text-align: center;font-weight: bold;margin-bottom: 0px;">
+                            R$ 100,00 em 1x no cartão</p>
+                        <h6 style="color: white;background-color: red;">PRODUTO ESGOTADO</h6>
+                    </div>
+                </div>
+                <div class="card col-sm-4 col-md-3" style="margin-bottom: 15px;" [routerLink]="['/produto-detalhe']">
+                    <div style="height: 210px;align-self: center;">
+                        <img src="assets/images/produto/SemImagem.jpg"
+                            class="card-img-top" alt="..." style="width: auto; max-width: 100%; height: auto;max-height: 210px; cursor: pointer;">
+                    </div>
+                    <div class="card-body" style="padding: 0px;text-align: center">
+                        <a class="card-title" style="text-align: center;cursor: pointer;"
+                        [routerLink]="['/produto-detalhe']">Nome Produto</a>
+                        <p class="card-text" style="text-align: center;color: forestgreen;margin-bottom: 0px;">
+                            R$ 100,00 à vista/boleto</p>
+                        <p class="card-text" style="text-align: center;font-weight: bold;margin-bottom: 0px;">
+                            R$ 100,00 em 1x no cartão</p>
+                        <h6 style="color: white;background-color: red;">PRODUTO ESGOTADO</h6>
+                    </div>
+                </div>
+                <div class="card col-sm-4 col-md-3" style="margin-bottom: 15px;" [routerLink]="['/produto-detalhe']">
+                    <div style="height: 210px;align-self: center;">
+                        <img src="assets/images/produto/SemImagem.jpg"
+                            class="card-img-top" alt="..." style="width: auto; max-width: 100%; height: auto;max-height: 210px; cursor: pointer;">
+                    </div>
+                    <div class="card-body" style="padding: 0px;text-align: center">
+                        <a class="card-title" style="text-align: center;cursor: pointer;"
+                        [routerLink]="['/produto-detalhe']">Nome Produto</a>
+                        <p class="card-text" style="text-align: center;color: forestgreen;margin-bottom: 0px;">
+                            R$ 100,00 à vista/boleto</p>
+                        <p class="card-text" style="text-align: center;font-weight: bold;margin-bottom: 0px;">
+                            R$ 100,00 em 1x no cartão</p>
+                        <h6 style="color: white;background-color: red;">PRODUTO ESGOTADO</h6>
+                    </div>
+                </div>
+                <div class="card col-sm-4 col-md-3" style="margin-bottom: 15px;" [routerLink]="['/produto-detalhe']">
+                    <div style="height: 210px;align-self: center;">
+                        <img src="assets/images/produto/SemImagem.jpg"
+                            class="card-img-top" alt="..." style="width: auto; max-width: 100%; height: auto;max-height: 210px; cursor: pointer;">
+                    </div>
+                    <div class="card-body" style="padding: 0px;text-align: center">
+                        <a class="card-title" style="text-align: center;cursor: pointer;"
+                        [routerLink]="['/produto-detalhe']">Nome Produto</a>
+                        <p class="card-text" style="text-align: center;color: forestgreen;margin-bottom: 0px;">
+                            R$ 100,00 à vista/boleto</p>
+                        <p class="card-text" style="text-align: center;font-weight: bold;margin-bottom: 0px;">
+                            R$ 100,00 em 1x no cartão</p>
+                        <h6 style="color: white;background-color: red;">PRODUTO ESGOTADO</h6>
+                    </div>
+                </div>
+                <div class="card col-sm-4 col-md-3" style="margin-bottom: 15px;" [routerLink]="['/produto-detalhe']">
+                    <div style="height: 210px;align-self: center;">
+                        <img src="assets/images/produto/SemImagem.jpg"
+                            class="card-img-top" alt="..." style="width: auto; max-width: 100%; height: auto;max-height: 210px; cursor: pointer;">
+                    </div>
+                    <div class="card-body" style="padding: 0px;text-align: center">
+                        <a class="card-title" style="text-align: center;cursor: pointer;"
+                        [routerLink]="['/produto-detalhe']">Nome Produto</a>
+                        <p class="card-text" style="text-align: center;color: forestgreen;margin-bottom: 0px;">
+                            R$ 100,00 à vista/boleto</p>
+                        <p class="card-text" style="text-align: center;font-weight: bold;margin-bottom: 0px;">
+                            R$ 100,00 em 1x no cartão</p>
+                        <h6 style="color: white;background-color: red;">PRODUTO ESGOTADO</h6>
+                    </div>
+                </div>
+                <div class="card col-sm-4 col-md-3" style="margin-bottom: 15px;" [routerLink]="['/produto-detalhe']">
+                    <div style="height: 210px;align-self: center;">
+                        <img src="assets/images/produto/SemImagem.jpg"
+                            class="card-img-top" alt="..." style="width: auto; max-width: 100%; height: auto;max-height: 210px; cursor: pointer;">
+                    </div>
+                    <div class="card-body" style="padding: 0px;text-align: center">
+                        <a class="card-title" style="text-align: center;cursor: pointer;"
+                        [routerLink]="['/produto-detalhe']">Nome Produto</a>
+                        <p class="card-text" style="text-align: center;color: forestgreen;margin-bottom: 0px;">
+                            R$ 100,00 à vista/boleto</p>
+                        <p class="card-text" style="text-align: center;font-weight: bold;margin-bottom: 0px;">
+                            R$ 100,00 em 1x no cartão</p>
+                        <h6 style="color: white;background-color: red;">PRODUTO ESGOTADO</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Rodapé do catalogo com botoes de mudança de página -->
+    <hr *ngIf="!carregando" />
+    <div class="row" *ngIf="!carregando">
+        <div class="col-md-12" style="text-align: right;">
+            <ul class="pager" style="display: contents;">
+                <button type="button" class="btn btn-dark"
+                    style="margin-right: 10px;">
+                    Página Anterior
+                </button>
+                <button  type="button"
+                    class="btn btn-dark">
+                    Próxima Página
+                </button>
+            </ul>
+        </div>
+    </div>
+    <br/>
+</div>
