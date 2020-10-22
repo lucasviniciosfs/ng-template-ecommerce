@@ -9,6 +9,18 @@
     margin-top: 100px;
   }
 }
+@media (min-width: 600px) {
+  .container {
+    padding-top: 100px;
+  }
+}
+
+@media (min-width: 600px) {
+  .spinner {
+    position: fixed;
+    top: 10% !important;
+  }
+}
 
 .bg-dark {
     background-color: #012e40!important;
