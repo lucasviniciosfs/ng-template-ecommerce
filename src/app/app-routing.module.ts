@@ -25,10 +25,10 @@ const routes: Routes = [
   //   path: 'login',
   //   loadChildren: () => import('./login/login.module').then(m => m.LoginModule)
   // },
-  // {
-  //   path: 'catalogo',
-  //   loadChildren: () => import('./catalogo/catalogo.module').then(m => m.CatalogoModule)
-  // },
+  {
+    path: 'catalogo',
+    loadChildren: () => import('./catalogo/catalogo.module').then(m => m.CatalogoModule)
+  },
   {
     path: 'produto-detalhe',
     loadChildren: () => import('./produto-detalhe/produto-detalhe.module').then(m => m.ProdutoDetalheModule)
