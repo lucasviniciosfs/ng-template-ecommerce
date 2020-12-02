@@ -1,0 +1,518 @@
+<!-- Loading -->
+<div class="container" *ngIf="carregando">
+    <app-carregando></app-carregando>
+</div>
+
+<!-- Corpo do Carrinho -->
+<div class="container" *ngIf="!carrinhoVazio&&!carregando">
+  
+    <!-- Indicador de rota -->  
+    <nav aria-label="breadcrumb" *ngIf="!carregando">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a [routerLink]="['/home']">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Carrinho</li>
+    </ol>
+    </nav>
+
+    <!-- Titulo de produtos para compra -->
+    <h6>Produtos para Compra</h6>
+    <hr />
+
+    <!-- Cabeçalho de produtos para compra -->
+    <div class=" cabecalhoCarrinho list-group">
+        <div class="row">
+            <div class="col-md-2" style="text-align: center;">
+            </div>
+            <div class="col-md-3" style="text-align: center;">
+                <p><strong>Produto</strong></p>
+            </div>
+            <div class="col-md-2" style="text-align: center;">
+                <p><strong>Preço</strong></p>
+            </div>
+            <div class="col-md-2" style="text-align: center;">
+                <p><strong>Quantidade</strong></p>
+            </div>
+            <div class="col-md-2" style="text-align: center;">
+                <p><strong>Preço Total</strong> </p>
+            </div>
+            <div class="col-md-1" style="text-align: center;">
+            </div>
+        </div>
+    </div>
+
+    <!-- lista de produtos para compra -->
+    <div class="list-group" >
+        <a class="list-group-item">
+            <div class="row" data-pg-collapsed>
+                <div class="col-md-2" style="text-align: center;">
+                    <img  src="assets/images/produto/SemImagem.jpg" width="100" height="100" />
+                </div>
+                <div class="col-md-3" data-pg-collapsed style="margin-top: 15px;text-align: center;">
+                    <h6 style="font-size: smaller;">Nome Produto</h6>
+                    <h6 style="font-size: smaller;">Cor: Preto</h6>
+                    <h6 style="font-size: smaller;">Tamanho: M</h6>
+                </div>
+                <div class="col-md-2" data-pg-collapsed style="margin-top: 15px;text-align: center;">
+                    <p>R$ 100,00 à vista/boleto</p>
+                </div>
+                <div class="col-md-2" data-pg-collapsed style="margin-top: 15px;">
+                    <div class="row" style="margin-right: 0px;margin-left: 0px;">
+                        <p class="naoMostraMobile mostraMobile">Quantidade:</p>
+                        <input class="mostraMobile form-control" style="text-align: center;" 
+                            name="quantidade" type="number"
+                            placeholder="Quantidade">
+                    </div>
+                </div>
+                <div class="cabecalhoCarrinho col-md-2" style="text-align: center;margin-top: 15px;">
+                    <p>R$ 100,00 à vista/boleto</p>
+                </div>
+                <div class="col-md-1" style="text-align: center;margin-top: 15px;">
+                    <button type="button" class="btn btn-danger">X
+                    </button>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <!-- Trecho final da parte de compras -->
+    <div>
+        <div class="row" data-pg-collapsed>
+            <div class="col-md-2">
+            </div>
+            <div class="col-md-3" data-pg-collapsed>
+            </div>
+            <div class="col-md-3" data-pg-collapsed>
+                <div class="row">
+                </div>
+            </div>
+            <div class="col-md-4" style="text-align: end;">
+                <br />
+                <br />
+                <h5>Valor Total: R$ 100,00 à vista/boleto</h5>
+            </div>
+        </div>
+        <hr />
+    </div>
+
+    <!-- Calculo de frete-->
+    <div>
+        <div class="row" data-pg-collapsed>
+            <div class="col-md-2">
+            </div>
+            <div class="col-md-3" data-pg-collapsed>
+            </div>
+            <div class="col-md-4">
+                <input class="mostraMobile form-control" style="text-align: center;width: 100%;margin-bottom: 8px;" #cep
+                    name="quantidade" mask="00000-000" type="text" placeholder="CEP">
+            </div>
+            <div class="col-md-3" style="text-align: end;margin-bottom: 8px;">
+                <button style="width: 100%;" type="button"
+                    class="btn btn-dark">Simular Cálculo de Frete</button>
+            </div>
+        </div>
+        <div class="row" data-pg-collapsed>
+            <div class="col-md-2">
+            </div>
+            <div class="col-md-3" data-pg-collapsed>
+            </div>
+            <div class="col-md-3">
+            </div>
+            <div class="col-md-4" style="text-align: end;">
+                <div class="custom-control custom-radio">
+                    <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked="" required="">
+                    <label class="custom-control-label" for="credit">PAC: R$ 10,00 em até 50 dias úteis</label>
+                </div>
+                <div class="custom-control custom-radio">
+                    <input id="debit" name="paymentMethod" type="radio" class="custom-control-input" required="">
+                    <label class="custom-control-label" for="debit">SEDEX R$ 10,00 em até 50 dias úteis</label>
+                </div>
+                <div class="custom-control custom-radio">
+                    <input id="loja" name="paymentMethod" type="radio" class="custom-control-input" required="">
+                    <label class="custom-control-label" for="loja">Negociar com a loja</label>
+                </div>
+            </div>
+        </div>
+        <hr />
+    </div>
+
+    <!-- Rodapé da tela de carrinho com botao de finalizar pedido -->
+    <div>
+        <div class="row">
+            <!-- Bloco dos parcelamentos -->
+            <div class="col-md-5" style="text-align: start;">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Parcelamento</h5>
+                  <select class="custom-select" style="color: black;">
+                    <option selected value="visa">Visa</option>
+                    <option value="mastercard">Mastercard</option>
+                    <option value="diners">Diners</option>
+                    <option value="amex">Amex</option>
+                    <option value="elo">Elo</option>
+                    <option value="hipercard">Hipercard</option>
+                  </select>
+                  <hr/>
+                  <div>
+                    <p class="card-text" style="margin-bottom: 5px;font-size: small;">
+                      <strong>Parcela:</strong> 1X
+                      <strong>Juros:</strong> 0,5 a.m.
+                      <strong>Valor Parcela:</strong> R$ 100,00
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Bloco dos preços totais e botes finais -->
+            <div class="col-md-7" style="text-align: end;">
+                <h5>Sub Total (À Vista): R$ 100,00</h5>
+                <h5>Sub Total (Cartão): R$ 100,00</h5>
+                <button style="width: 100%;margin-bottom: 10px;" type="button" class="btn btn-dark" (click)="parentModal.show()">
+                    Finalizar Pedido
+                </button>
+                <button style="width: 100%;border-color: black;" type="button" [routerLink]="['/catalogo']"
+                    class="btn btn-light"> Continuar Comprando</button>
+            </div>
+        </div>
+    </div>
+    <br />
+
+    <!-- modal de informar pagamento -->
+    <div class="modal fade" bsModal #parentModal="bs-modal" tabindex="-1" role="dialog"
+        aria-labelledby="dialog-nested-name1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <!-- Titulo Modal -->
+                <div class="modal-header">
+                    <h4 id="dialog-nested-name1" class="modal-title pull-left">Finalizar Pedido</h4>
+                    <button type="button" class="close pull-right" aria-label="Close" (click)="parentModal.hide()">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <!-- Corpo do Modal -->
+                <div class="modal-body">
+                  <!-- Enderecos de entrega -->
+                  <div class="row">
+                      <!-- Endereco Principal -->
+                      <div class="col-md-6">
+                          <div class="card">
+                              <div class="card-body">
+                                  <div class="custom-control custom-radio">
+                                      <input id="enderecoPrincipal" name="endereco" type="radio" class="custom-control-input"
+                                          checked=""
+                                          required="">
+                                      <label class="custom-control-label" for="enderecoPrincipal">Entregar no endereço principal</label>
+                                  </div>
+                                  <br/>
+                                <h5 class="card-title">Endereco Principal</h5>
+                                <ul class="list-unstyled text-small">
+                                  <li>
+                                    <a>Rua A</a>
+                                  </li>
+                                  <li>
+                                    <a >Nº 0</a></li>
+                                  <li>
+                                    <a>Bairro Central</a></li>
+                                  <li>
+                                    <a>740000</a>
+                                  </li>
+                                  <li>
+                                    <a>Goiânia - GO</a>
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                      </div>
+                      <!-- Endereco Alternativo -->
+                      <div class="col-md-6">
+                          <div class="card">
+                              <div class="card-body">
+                                 <div class="custom-control custom-radio">
+                                      <input id="enderecoAlternativo" name="endereco" type="radio" class="custom-control-input"
+                                      required="">
+                                      <label class="custom-control-label" for="enderecoAlternativo">Entregar em outro endereço</label>
+                                </div>
+                                <br/>
+                                <h5 class="card-title">Endereco Alternativo</h5>
+                                <ul class="list-unstyled text-small">
+                                    <li>
+                                        <a>Rua A</a>
+                                    </li>
+                                    <li>
+                                        <a >Nº 0</a></li>
+                                    <li>
+                                        <a>Bairro Central</a></li>
+                                    <li>
+                                        <a>740000</a>
+                                    </li>
+                                    <li>
+                                        <a>Goiânia - GO</a>
+                                    </li>
+                                  <hr/>
+                                  <button type="button" style="width: 100%;" class="btn btn-dark" (click)="enderecoModal.show()">
+                                      Informar endereço
+                                  </button>
+                                </ul>
+                              </div>
+                            </div>
+                      </div>
+                  </div>
+                  <hr />
+                  <!-- Botao de calcular o frete -->
+                  <div class="row" data-pg-collapsed style="justify-content: center;">
+                    <div class="col-md-6">
+                      <button style="width: 100%;" type="button"
+                      class="btn btn-dark">Calcular Frete</button>
+                    </div>
+                  </div>
+                  <!-- Valores do frete -->
+                  <div class="row" data-pg-collapsed>
+                      <div class="col-md-6">
+                          <label >Escolha o seu frete:</label>
+                          <div class="custom-control custom-radio">
+                              <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked="" required="">
+                              <label class="custom-control-label" for="credit">PAC: R$ 10,00 em até 50 dias úteis</label>
+                          </div>
+                          <div class="custom-control custom-radio">
+                              <input id="debit" name="paymentMethod" type="radio" class="custom-control-input" required="">
+                              <label class="custom-control-label" for="debit">SEDEX R$ 10,00 em até 50 dias úteis</label>
+                          </div>
+                          <div class="custom-control custom-radio">
+                              <input id="loja" name="paymentMethod" type="radio" class="custom-control-input" required="">
+                              <label class="custom-control-label" for="loja">Negociar com a loja</label>
+                          </div>
+                      </div>
+                  </div>
+                  <hr/>
+                  <div>
+                    <!-- Tipos de pagamento -->
+                    <label>Selecione um tipo de pagamento:</label>
+                    <select class="custom-select">
+                        <option selected>Boleto</option>
+                        <option selected>Cartão de Crédito</option>
+                        <option selected>Cartão de Débito</option>
+                        <option selected>PayPal</option>
+                    </select>
+                    <hr />
+                    <!-- Cadastro de Cartao -->
+                    <button type="button" style="width: 100%;" class="btn btn-dark" (click)="childModal.show()">Dados do Cartão</button>
+                    <!-- Parcelas -->
+                    <label>Selecione o número de parcelas:</label>
+                    <select #parcela  class="custom-select">
+                        <option selected>1 X</option>
+                        <option>2 X</option>
+                        <option>3 X</option>
+                        <option>4 X</option>
+                    </select>
+                    <hr  />
+                    <div class="row">
+                      <div class="col-md-6">
+                      </div>
+                      <div class="col-md-6">
+                          <h5 style="text-align: end;">Sub Total (À Vista): R$ 100,00</h5>
+                          <h5 style="text-align: end;">Sub Total (Cartão): R$ 100,00</h5>
+                      </div>
+                    </div>
+                  </div>
+                    <hr  />
+                    <!-- Botao de finalizar o pedido -->
+                    <button type="button" style="width: 100%;" class="btn btn-dark"
+                     (click)="parentModal.hide()"
+                    >
+                        Finalizar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- modal de informar dados do cartao -->
+    <div class="modal fade" bsModal #childModal="bs-modal" tabindex="-1" role="dialog"
+        aria-labelledby="dialog-nested-name2">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 id="dialog-nested-name2" class="modal-title pull-left">Cartão</h4>
+                    <button type="button" class="close pull-right" aria-label="Close" (click)="fecharModalCartao()">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="cc-name">Nome</label>
+                            <input oninput="this.value = this.value.toUpperCase()" type="text"
+                                class="form-control" id="cc-name" placeholder="" required="">
+                            <small class="text-muted">Nome do titular do cartão</small>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                          <div class="form-group">
+                            <label class="control-label">CPF</label>
+                            <input mask="000.000.000-00" [showMaskTyped] = "true" oninput="this.value = this.value.toUpperCase()" class="form-control" type="text" name="cpf" required="">
+                          </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6 mb-6">
+                        <label class="control-label">Telefone Celular</label>
+                        <input mask="(00)00000-0000" [showMaskTyped] = "true" oninput="this.value = this.value.toUpperCase()" class="form-control" type="tel" name="telCel">
+                      </div>
+                      <div class="col-md-6 mb-6">
+                        <label class="control-label">Data de Nascimento</label>
+                        <input mask="00/00/0000" [showMaskTyped] = "true" class="form-control" type="number" name="dtnascimento" required="" placeholder="">
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12 mb-12">
+                        <label for="cc-number">Número</label>
+                        <input type="number" class="form-control" id="cc-number"
+                            placeholder="" required="">
+                      </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="cc-expiration">Mês de Validade</label>
+                            <select class="custom-select" style="color: black;">
+                                <option value="01">01</option>
+                                <option value="02">02</option>
+                                <option value="03">03</option>
+                                <option value="04">04</option>
+                                <option value="05">05</option>
+                                <option value="06">06</option>
+                                <option value="07">07</option>
+                                <option value="08">08</option>
+                                <option value="09">09</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="cc-expiration">Ano de Validade</label>
+                            <select class="custom-select" style="color: black;">
+                                <option value="2020">2020</option>
+                                <option value="2021">2021</option>
+                                <option value="2022">2022</option>
+                                <option value="2023">2023</option>
+                                <option value="2024">2024</option>
+                                <option value="2025">2025</option>
+                                <option value="2026">2026</option>
+                                <option value="2027">2027</option>
+                                <option value="2028">2028</option>
+                                <option value="2029">2029</option>
+                                <option value="2030">2030</option>
+                                <option value="2031">2031</option>
+                                <option value="2032">2032</option>
+                                <option value="2033">2033</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="cc-cvv">CVV</label>
+                            <input type="number" maxlength="3" class="form-control" id="cc-cvv"
+                                placeholder="" required="">
+                        </div>
+                        <div class="col-md-6 mb-3">
+                          <label for="cc-expiration">Bandeira</label>
+                          <select class="custom-select" style="color: black;">
+                              <option value="visa">Visa</option>
+                              <option value="mastercard">Mastercard</option>
+                              <option value="diners">Diners</option>
+                              <option value="amex">Amex</option>
+                              <option value="elo">Elo</option>
+                              <option value="hipercard">Hipercard</option>
+                          </select>
+                      </div>
+                    </div>
+                    <hr />
+                    <button type="button" style="width: 100%;" class="btn btn-dark">
+                        Adicionar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- modal de informar endereco alternativo -->
+    <div class="modal fade" bsModal #enderecoModal="bs-modal" tabindex="-1" role="dialog"
+        aria-labelledby="dialog-nested-name2">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 id="dialog-nested-name2" class="modal-title pull-left">Endereço</h4>
+                    <button type="button" class="close pull-right" aria-label="Close" (click)="enderecoModal.hide()">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>CEP</label>
+                            <input mask="00000-000" [showMaskTyped]="true" oninput="this.value = this.value.toUpperCase()"
+                                class="form-control" type="text"
+                                required="">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 ">
+                            <div class="form-group">
+                                <label>Endereço</label>
+                                <input oninput="this.value = this.value.toUpperCase()"
+                                    class="form-control" type="text" name="endereco" required="" placeholder="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>Numero </label>
+                            <input class="form-control" type="number" name="numEnd" required=""
+                                placeholder="">
+                        </div>
+                        <div class="col-md-6">
+                            <label>Bairro </label>
+                            <input oninput="this.value = this.value.toUpperCase()" class="form-control"
+                                type="text">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label>Complemento </label>
+                            <input oninput="this.value = this.value.toUpperCase()"
+                                class="form-control" type="text">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>Cidade </label>
+                            <input oninput="this.value = this.value.toUpperCase()" class="form-control"
+                                type="text">
+                        </div>
+                        <div class="col-md-6">
+                            <label>Estado UF</label>
+                            <input mask="SS" oninput="this.value = this.value.toUpperCase()"
+                                class="form-control" maxlength="2" type="text" required="">
+                        </div>
+                    </div>
+                    <hr />
+                    <button type="button" style="width: 100%;" class="btn btn-dark">
+                        Salvar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- Container de carrinho vazio -->
+<div class="container" *ngIf="carrinhoVazio">
+    <div class="jumbotron">
+        <h1 class="display-4">Carrinho Vazio! :(</h1>
+        <p class="lead"></p>
+        <hr class="my-4">
+        <p></p>
+        <p class="lead">
+            <a class="btn btn-dark btn-lg" [routerLink]="['/catalogo']" role="button">Ir as compras!</a>
+        </p>
+    </div>
+</div>
