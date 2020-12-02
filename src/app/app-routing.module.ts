@@ -13,10 +13,10 @@ const routes: Routes = [
   //   path: 'pedido-detalhe',
   //   loadChildren: () => import('./pedido-detalhe/pedido-detalhe.module').then(m => m.PedidoDetalheModule)
   // },
-  // {
-  //   path: 'carrinho',
-  //   loadChildren: () => import('./carrinho/carrinho.module').then(m => m.CarrinhoModule)
-  // },
+  {
+    path: 'carrinho',
+    loadChildren: () => import('./carrinho/carrinho.module').then(m => m.CarrinhoModule)
+  },
   // {
   //   path: 'cadastro',
   //   loadChildren: () => import('./cadastro/cadastro.module').then(m => m.CadastroModule)
