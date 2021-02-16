@@ -13,7 +13,6 @@ import { SharedModule } from './shared/shared.module';
 import { environment } from '../environments/environment';
 
 import { BsDropdownModule, BsDropdownConfig, BsDropdownDirective  } from 'ngx-bootstrap/dropdown';
-//import { RecuperaSenhaModule } from './recupera-senha/recupera-senha.module';
 
 registerLocaleData(ptBr)
 
@@ -30,7 +29,6 @@ registerLocaleData(ptBr)
     SharedModule,
     BsDropdownModule.forRoot(),
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
-    //RecuperaSenhaModule,
   ],
   providers: [
     { provide: LOCALE_ID, useValue: 'pt' },
