@@ -1,0 +1,43 @@
+<div class="container" style="max-width: 1300px">
+  <app-carregando *ngIf="carregando"></app-carregando>
+  <nav aria-label="breadcrumb" *ngIf="!carregando">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a [routerLink]="['/home']">Home</a></li>
+      <li class="breadcrumb-item"><a [routerLink]="['/pedidos']">Pedidos</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Detalhes do pedido</li>
+    </ol>
+  </nav>
+  <!-- Catalogo-->
+  <div class="row" style="margin: 0px;" *ngIf="!carregando">
+      <!-- PRODUTOS -->
+      <div class="col-sm-12 col-md-12" style="padding: 0%;">
+          <div class="row" style="margin: 0px;">
+              <div class="card col-sm-4 col-md-4" style="margin-bottom: 15px;">
+                  <div style="height: 250px;align-self: center;">
+                      <img src="assets/images/produto/SemImagem.jpg"
+                          class="card-img-top" alt="..." style="width: auto; max-width: 100%; height: auto;max-height: 250px; cursor: pointer;">
+                  </div>
+                  <div class="card-body" style="padding: 0px;text-align: center">
+                    <h5 class="card-title"  style="text-align: center;cursor: pointer;">Produto Nome</h5>
+                    <p class="card-text">Quantidade: 10</p>
+                    <p class="card-text">Valor total pago: R$ 1500,25</p>
+                  </div>
+              </div>
+              <div class="card col-sm-4 col-md-4" style="margin-bottom: 15px;">
+                  <div style="height: 250px;align-self: center;">
+                      <img src="assets/images/produto/SemImagem.jpg"
+                          class="card-img-top" alt="..." style="width: auto; max-width: 100%; height: auto;max-height: 250px; cursor: pointer;">
+                  </div>
+                  <div class="card-body" style="padding: 0px;text-align: center">
+                    <h5 class="card-title"  style="text-align: center;cursor: pointer;">Produto Nome</h5>
+                    <p class="card-text">Quantidade: 10</p>
+                    <p class="card-text">Valor total pago: R$ 1500,25</p>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <br/>
+  <button type="button" class="btn btn-dark" [routerLink]="['/pedidos']" style="width: 100%;">Voltar</button>
+</div>
+
