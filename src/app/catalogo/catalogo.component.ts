@@ -39,7 +39,7 @@ export class CatalogoComponent implements OnInit,OnDestroy {
       this.singleton = Singleton._instancia;
       this.carregando = false;
     },
-    10000);
+    2000);
   }
 
   ngOnDestroy(){
