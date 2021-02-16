@@ -4,9 +4,9 @@ This project it's a template for ecommerce and was generated with [Angular CLI](
 
 ## Dependencies
 
-Bootstrap
-ngx-mask
-ngx-bootstrap
+##### Bootstrap
+##### ngx-mask
+##### ngx-bootstrap
 
 ## Development server
 
