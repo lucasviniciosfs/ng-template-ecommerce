@@ -1,6 +1,12 @@
 # EquilibrioEcommerce
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.
+This project it's a template for ecommerce and was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.
+
+## Dependencies
+
+Bootstrap
+ngx-mask
+ngx-bootstrap
 
 ## Development server
 
