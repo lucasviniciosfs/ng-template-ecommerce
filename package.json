@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -21,8 +21,10 @@
     "@angular/platform-browser-dynamic": "~11.2.0",
     "@angular/router": "~11.2.0",
     "@angular/service-worker": "~11.2.0",
+    "@nguniversal/express-engine": "^11.1.2",
     "bootstrap": "^4.5.0",
     "classlist.js": "^1.1.20150312",
+    "express": "^4.17.1",
     "less": "^4.1.1",
     "ngx-bootstrap": "^5.6.1",
     "ngx-mask": "^11.1.4",
