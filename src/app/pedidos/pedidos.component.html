@@ -1,0 +1,78 @@
+<div class="container" *ngIf="carregando">
+  <app-carregando></app-carregando>
+</div>
+
+<div class="container" *ngIf="!carregando">
+  <nav aria-label="breadcrumb" *ngIf="!carregando">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a [routerLink]="['/home']">Home</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Pedidos</li>
+    </ol>
+  </nav>
+  <div class="card">
+    <div class="card-header"><strong>Pedido:</strong> 61598418</div>
+    <div class="card-body">
+      <p class="card-text">
+        <strong>Data:</strong>
+      </p>
+      <p class="card-text">
+        <strong>Valor: </strong>
+      </p>
+      <div style="margin-bottom: 1rem">
+        <p class="card-text" >
+          <strong>Situação: </strong>Pagamento realizado! Seu pedido foi
+          aprovado!
+        </p>
+        <div class="card-text">
+          <strong>Situação: </strong>
+          <div>
+            <p>
+              Aguardando confirmação de pagamento do boleto!
+            </p>
+            <p>
+              Pedido aguardando confirmação de pagamento!
+            </p>
+            <p>
+              Pedido sendo analisado pelo departamento financeiro!
+            </p>
+          </div>
+        </div>
+      </div>
+      <div
+        style="margin-bottom: 1rem"
+      >
+        <p class="card-text" >
+          <strong>Status: </strong>Pedido em separação!
+        </p>
+        <p class="card-text">
+          <strong>Status: </strong>Pedido separado! NF-e em emissão...
+        </p>
+        <p class="card-text" >
+          <strong>Status: </strong>NF-e emitida, seu pedido está pronto para o
+          envio!
+        </p>
+      </div>
+      <div class="row">
+        <div class="col-md-3">
+          <button
+            type="button"
+            class="btn btn-dark"
+            style="width: 100%;"
+            [routerLink]="['/pedido-detalhe']"
+          >
+            Visualizar produtos
+          </button>
+        </div>      
+        <div class="col-md-2">
+          <button
+            type="button"
+            class="btn btn-dark"
+          >
+            <a style="color: white">Ver Boleto</a>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr/>
+</div>
